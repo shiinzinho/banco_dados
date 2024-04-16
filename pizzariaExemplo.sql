@@ -209,7 +209,8 @@ select sum(valor) as soma from pizza;
 -- Qual a soma de todos os produtos do pedido 7 de acordo com a quantidade de cada produto?
 select sum(quantidade * valor) from item_pedido ip where pedido_id = 7;
 
-select c.cliente_id, n.nome, cont(p.pedido_id) as qtde_pedido from pedido p 
+-- exiba o nome e a quantidade de pedidos de cada cliente
+select c.cliente_id, c.nome, count(p.pedido_id) as qtde_pedido from pedido p 
 inner join cliente c on p.cliente_id = c.cliente_id group by c.cliente_id, c.nome  
 
 
