@@ -211,6 +211,6 @@ select sum(quantidade * valor) from item_pedido ip where pedido_id = 7;
 
 -- exiba o nome e a quantidade de pedidos de cada cliente
 select c.cliente_id, c.nome, count(p.pedido_id) as qtde_pedido from pedido p 
-inner join cliente c on p.cliente_id = c.cliente_id group by c.cliente_id, c.nome  
+inner join cliente c on p.cliente_id = c.cliente_id group by c.cliente_id, c.nome;
 
 
